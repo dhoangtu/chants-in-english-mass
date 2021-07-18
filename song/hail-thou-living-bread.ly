@@ -9,7 +9,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1. Common settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\version "2.18.2"
+\version "2.22.1"
 
 \header {
   title = "Hail! Thou Living Bread"
@@ -39,7 +39,7 @@ global= {
   system-system-spacing = #'((basic-distance . 3) (padding . 5))
 }
 
-printItalic = \with {
+printItalic = {
   \override LyricText.font-shape = #'italic
 }
 
@@ -94,6 +94,6 @@ verseTwo = \lyricmode {
         \new Voice = "sopranos" { \global   \musicVerseSoprano }
       >>
       \new Lyrics \lyricsto sopranos \verseOne
-      \new Lyrics \printItalic \lyricsto sopranos \verseTwo
+      \new Lyrics \with \printItalic \lyricsto sopranos \verseTwo
     >>
 }

@@ -9,7 +9,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1. Common settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\version "2.18.2"
+\version "2.22.1"
 
 \header {
   title = "Holy God, We Praise Thy Name"
@@ -39,7 +39,7 @@ global= {
   print-page-number = #f
 }
 
-printItalic = \with {
+printItalic = {
   \override LyricText.font-shape = #'italic
 }
 
@@ -149,10 +149,10 @@ verseSix = \lyricmode {
         \new Voice = "sopranos" { \global   \musicVerseSoprano }
       >>
       \new Lyrics \lyricsto sopranos \verseOne
-      \new Lyrics \printItalic \lyricsto sopranos \verseTwo
+      \new Lyrics \with \printItalic \lyricsto sopranos \verseTwo
       \new Lyrics \lyricsto sopranos \verseThree
-      \new Lyrics \printItalic \lyricsto sopranos \verseFour
+      \new Lyrics \with \printItalic \lyricsto sopranos \verseFour
       \new Lyrics \lyricsto sopranos \verseFive
-      \new Lyrics \printItalic \lyricsto sopranos \verseSix
+      \new Lyrics \with \printItalic \lyricsto sopranos \verseSix
     >>
 }

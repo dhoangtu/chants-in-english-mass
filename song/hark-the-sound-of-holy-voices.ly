@@ -9,7 +9,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1. Common settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\version "2.18.2"
+\version "2.22.1"
 
 \header {
   title = "Hark! The Sound Of Holy Voices"
@@ -38,7 +38,7 @@ global= {
   page-count = #1
 }
 
-printItalic = \with {
+printItalic = {
   \override LyricText.font-shape = #'italic
 }
 
@@ -114,8 +114,8 @@ verseFour = \lyricmode {
         \new Voice = "sopranos" { \global   \musicVerseSoprano }
       >>
       \new Lyrics \lyricsto sopranos \verseOne
-      \new Lyrics \printItalic \lyricsto sopranos \verseTwo
+      \new Lyrics \with \printItalic \lyricsto sopranos \verseTwo
       \new Lyrics \lyricsto sopranos \verseThree
-      \new Lyrics \printItalic \lyricsto sopranos \verseFour
+      \new Lyrics \with \printItalic \lyricsto sopranos \verseFour
     >>
 }

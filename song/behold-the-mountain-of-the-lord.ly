@@ -9,7 +9,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1. Common settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\version "2.18.2"
+\version "2.22.1"
 
 \header {
   title = "Behold! The Mountain Of The Lord"
@@ -38,7 +38,7 @@ global= {
   system-system-spacing = #'((basic-distance . 3) (padding . 3))
 }
 
-printItalic = \with {
+printItalic = {
   \override LyricText.font-shape = #'italic
 }
 
@@ -132,11 +132,11 @@ verseSeven = \lyricmode {
         \new Voice = "sopranos" { \global   \musicVerseSoprano }
       >>
       \new Lyrics \lyricsto sopranos \verseOne
-      \new Lyrics \printItalic \lyricsto sopranos \verseTwo
+      \new Lyrics \with \printItalic \lyricsto sopranos \verseTwo
       \new Lyrics \lyricsto sopranos \verseThree
       \new Lyrics \lyricsto sopranos \verseFour
-      \new Lyrics \printItalic \lyricsto sopranos \verseFive
+      \new Lyrics \with \printItalic \lyricsto sopranos \verseFive
       \new Lyrics \lyricsto sopranos \verseSix
-      \new Lyrics \printItalic \lyricsto sopranos \verseSeven
+      \new Lyrics \with \printItalic \lyricsto sopranos \verseSeven
     >>
 }

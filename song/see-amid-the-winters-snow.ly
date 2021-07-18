@@ -11,7 +11,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1. Common settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\version "2.18.2"
+\version "2.22.1"
 
 \header {
   title = "See, Amid The Winter's Snow"
@@ -42,7 +42,7 @@ globalSettings = {
   system-system-spacing = #'((basic-distance . 3) (padding . 3))
 }
 
-printItalic = \with {
+printItalic = {
   \override LyricText.font-shape = #'italic
 }
 
@@ -131,9 +131,9 @@ lyricChorus = \lyricmode {
         }
       >>
       \new Lyrics \lyricsto soprano \lyricVerseOne
-      \new Lyrics \printItalic \lyricsto soprano \lyricVerseTwo
+      \new Lyrics \with \printItalic \lyricsto soprano \lyricVerseTwo
       \new Lyrics \lyricsto soprano \lyricVerseThree
-      \new Lyrics \printItalic \lyricsto soprano \lyricVerseFour
+      \new Lyrics \with \printItalic \lyricsto soprano \lyricVerseFour
     >>
 }
 
