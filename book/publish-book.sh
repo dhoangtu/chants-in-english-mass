@@ -1,14 +1,13 @@
 #!/bin/bash
+set -x
 
 LYFILES="/home/dhtu/Desktop/CATH/chants-in-english-mass/song"
 DELIMITER="@"
 
 GEN=./pdf-generated
-rm -rf ${GEN}
 mkdir ${GEN}
 
 RESIZED=./resized-90
-rm -rf ${RESIZED}
 mkdir ${RESIZED}
 
 CONTENT=./content-table.csv
@@ -35,8 +34,8 @@ do
     #echo "composer: ${composer}"
     
     # generate pdf files
-    lilypond --output="${GEN}/${title}${DELIMITER}${composer}" -dno-point-and-click --pdf "$fullname"
-    #lilypond --output="${FOLDER3}/${shortname}" -dno-point-and-click --pdf "${fullname}"
+    #lilypond --output="${GEN}/${title}${DELIMITER}${composer}" -dno-point-and-click --pdf "$fullname"
+
     
     #page counter
     echo "${title};${pagecounter}" >> ${CONTENT}
@@ -56,13 +55,13 @@ do
    name=`basename -- "$fullname"`
    shortname="${name%.*}"
    
- ~/Desktop/software/pdfScale.sh -v -r a5 -s 0.90 "${fullname}" "${RESIZED}/${name}"
+ #~/Desktop/software/pdfScale.sh -v -r a5 -s 0.90 "${fullname}" "${RESIZED}/${name}"
  
   filelist+=( "${RESIZED}/${name}" )
 done
 
 # combine songs
-~/Desktop/software/cpdf "${filelist[@]}" -o songs.pdf
+#pdftk "${filelist[@]}" cat output songs.pdf
 
 # add page numbers
 pdflatex song-odd-even.tex
@@ -75,13 +74,16 @@ REFEN=./ref-en.pdf
 TABLE=./contents.pdf
 BLANK=./blank-a5.pdf
 
-~/Desktop/software/cpdf  ${PREFACEVN} ${PREFACEEN} song-odd-even.pdf ${TABLE} ${BLANK} -o song-book.pdf
+pdftk ${PREFACEVN} ${PREFACEEN} song-odd-even.pdf ${TABLE} ${BLANK} cat output song-book.pdf
 
 # adjust even-odd page
-pdfjam --twoside --paper a5paper --offset '0.5cm 0cm' song-book.pdf --outfile book-adjusted.pdf
+pdfjam --twoside --paper a5paper --offset '0.3cm 0cm' song-book.pdf --outfile book-adjusted.pdf
 
 FRONT=./cover-front.pdf
 INNER=./cover-inner.pdf
 BACK=./cover-back.pdf
-~/Desktop/software/cpdf  ${FRONT} ${INNER} ${BLANK} book-adjusted.pdf ${BACK} -o chants-in-english-mass.pdf
+pdftk ${FRONT} ${INNER} ${BLANK} book-adjusted.pdf ${BACK} cat output chants-in-english-mass.pdf
+
+# remove temporary files
+#rm -rf ${GEN} ${RESIZED} songs.pdf song-odd-even.pdf song-book.pdf book-adjusted.pdf
 
