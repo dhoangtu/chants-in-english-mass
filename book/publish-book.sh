@@ -68,11 +68,11 @@ done
 pdflatex song-odd-even.tex
 
 # combine all pdf files in name order
-PREFACEVN=./covers/preface-vn.pdf
-PREFACEEN=./covers/preface-en.pdf
-REFVN=./covers/ref-vn.pdf
-REFEN=./covers/ref-en.pdf
-TABLE=./covers/contents.pdf
+PREFACEVN=./preface-vn.pdf
+PREFACEEN=./preface-en.pdf
+REFVN=./ref-vn.pdf
+REFEN=./ref-en.pdf
+TABLE=./contents.pdf
 BLANK=./blank-a5.pdf
 
 ~/Desktop/software/cpdf  ${PREFACEVN} ${PREFACEEN} song-odd-even.pdf ${TABLE} ${BLANK} -o song-book.pdf
@@ -80,8 +80,8 @@ BLANK=./blank-a5.pdf
 # adjust even-odd page
 pdfjam --twoside --paper a5paper --offset '0.5cm 0cm' song-book.pdf --outfile book-adjusted.pdf
 
-FRONT=./covers/cover-front.pdf
-INNER=./covers/cover-inner.pdf
-BACK=./covers/cover-back.pdf
+FRONT=./cover-front.pdf
+INNER=./cover-inner.pdf
+BACK=./cover-back.pdf
 ~/Desktop/software/cpdf  ${FRONT} ${INNER} ${BLANK} book-adjusted.pdf ${BACK} -o chants-in-english-mass.pdf
 
