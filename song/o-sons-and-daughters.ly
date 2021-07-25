@@ -12,7 +12,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1. Common settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\version "2.18.2"
+\version "2.22.1"
 
 \header {
   title = "O Sons And Daughters"
@@ -42,7 +42,7 @@ global= {
   system-system-spacing = #'((basic-distance . 3) (padding . 3))
 }
 
-printItalic = \with {
+printItalic = {
   \override LyricText.font-shape = #'italic
 }
 
@@ -135,10 +135,10 @@ latin = \lyricmode {
         \new Voice = "sopranos" { \voiceOne \global   \musicVerseSoprano }
       >>
       \new Lyrics \lyricsto sopranos \verseOne
-      \new Lyrics \printItalic \lyricsto sopranos \verseTwo
+      \new Lyrics \with \printItalic \lyricsto sopranos \verseTwo
       \new Lyrics \lyricsto sopranos \verseThree
-      \new Lyrics \printItalic \lyricsto sopranos \verseFour
-      \new Lyrics \printItalic \lyricsto sopranos \verseFive
+      \new Lyrics \with \printItalic \lyricsto sopranos \verseFour
+      \new Lyrics \with \printItalic \lyricsto sopranos \verseFive
       \new Lyrics \lyricsto sopranos \latin
     >>
 }

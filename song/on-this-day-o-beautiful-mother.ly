@@ -11,7 +11,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1. Common settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\version "2.18.2"
+\version "2.22.1"
 
 \header {
   title = "On This Day, O Beautiful Mother"
@@ -43,7 +43,7 @@ verseSettings = {
 			       (/ 20 20)))
 }
 
-printItalic = \with {
+printItalic = {
   \override LyricText.font-shape = #'italic
 }
 
@@ -178,9 +178,9 @@ lyricVerseFive = \lyricmode {
         }
       >>
       \new Lyrics \lyricsto soprano \lyricVerseOne
-      \new Lyrics \printItalic \lyricsto soprano \lyricVerseTwo
+      \new Lyrics \with \printItalic \lyricsto soprano \lyricVerseTwo
       \new Lyrics \lyricsto soprano \lyricVerseThree
-      \new Lyrics \printItalic \lyricsto soprano \lyricVerseFour
+      \new Lyrics \with \printItalic \lyricsto soprano \lyricVerseFour
       \new Lyrics \lyricsto soprano \lyricVerseFive
     >>
 }

@@ -1,15 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% CONTENTS OF THIS DOCUMENT
-% 1. Common settings
-% 2. Verse music
-% 3. Verse lyrics
-% 4. Layout
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 1. Common settings
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\version "2.18.2"
+\version "2.22.1"
 
 \header {
   title = "Abide With Us, Our Savior"
@@ -26,7 +15,7 @@ global= {
 
 \paper {
   #(set-paper-size "a5")
-  top-margin = 3.2\mm
+  top-margin = 10\mm
   bottom-marign = 10\mm
   left-margin = 10\mm
   right-margin = 10\mm
@@ -39,7 +28,7 @@ global= {
   system-system-spacing = #'((basic-distance . 3) (padding . 3))
 }
 
-printItalic = \with {
+printItalic = {
   \override LyricText.font-shape = #'italic
 }
 
@@ -95,8 +84,8 @@ verseFour = \lyricmode {
         \new Voice = "sopranos" { \global   \musicVerseSoprano }
       >>
       \new Lyrics \lyricsto sopranos \verseOne
-      \new Lyrics \printItalic \lyricsto sopranos \verseTwo
+      \new Lyrics \with \printItalic \lyricsto sopranos \verseTwo
       \new Lyrics \lyricsto sopranos \verseThree
-      \new Lyrics \printItalic \lyricsto sopranos \verseFour
+      \new Lyrics \with \printItalic \lyricsto sopranos \verseFour
     >>
 }

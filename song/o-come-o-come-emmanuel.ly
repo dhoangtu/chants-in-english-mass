@@ -17,7 +17,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1. Common settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\version "2.18.2"
+\version "2.22.1"
 
 \header {
   title = "O Come, O Come, Emmanuel"
@@ -46,7 +46,7 @@ global= {
 			       (/ 20 20)))
 }
 
-printItalic = \with {
+printItalic = {
   \override LyricText.font-shape = #'italic
 }
 
@@ -162,11 +162,11 @@ lyricChorus = \lyricmode {
         }
       >>
       \new Lyrics \lyricsto sopranos \lyricVerseOne
-      \new Lyrics \printItalic \lyricsto sopranos \lyricVerseTwo
+      \new Lyrics \with \printItalic \lyricsto sopranos \lyricVerseTwo
       \new Lyrics \lyricsto sopranos \lyricVerseThree
-      \new Lyrics \printItalic \lyricsto sopranos \lyricVerseFour
+      \new Lyrics \with \printItalic \lyricsto sopranos \lyricVerseFour
       \new Lyrics \lyricsto sopranos \lyricVerseFive
-      \new Lyrics \printItalic \lyricsto sopranos \lyricVerseSix
+      \new Lyrics \with \printItalic \lyricsto sopranos \lyricVerseSix
       \new Lyrics \lyricsto sopranos \lyricVerseSeven
     >>
 }

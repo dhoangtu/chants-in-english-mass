@@ -9,7 +9,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1. Common settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\version "2.18.2"
+\version "2.22.1"
 
 \header {
   title = "According To Thy Gracious Word"
@@ -26,7 +26,7 @@ global= {
 
 \paper {
   #(set-paper-size "a5")
-  top-margin = 3.2\mm
+  top-margin = 10\mm
   bottom-marign = 10\mm
   left-margin = 10\mm
   right-margin = 10\mm
@@ -39,7 +39,7 @@ global= {
   system-system-spacing = #'((basic-distance . 3) (padding . 5))
 }
 
-printItalic = \with {
+printItalic = {
   \override LyricText.font-shape = #'italic
 }
 
@@ -83,6 +83,6 @@ verseTwo = \lyricmode {
         \new Voice = "sopranos" { \global   \musicVerseSoprano }
       >>
       \new Lyrics \lyricsto sopranos \verseOne
-      \new Lyrics \printItalic \lyricsto sopranos \verseTwo
+      \new Lyrics \with \printItalic \lyricsto sopranos \verseTwo
     >>
 }

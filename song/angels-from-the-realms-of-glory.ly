@@ -11,7 +11,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1. Common settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\version "2.18.2"
+\version "2.22.1"
 
 \header {
   title = "Angels From The Realms Of Glory"
@@ -44,7 +44,7 @@ verseSettings = {
 			       (/ 20 20)))
 }
 
-printItalic = \with {
+printItalic = {
   \override LyricText.font-shape = #'italic
 }
 
@@ -137,11 +137,11 @@ lyricChorus = \lyricmode {
         }
       >>
       \new Lyrics \lyricsto soprano \lyricVerseOne
-      \new Lyrics \printItalic \lyricsto soprano \lyricVerseTwo
+      \new Lyrics \with \printItalic \lyricsto soprano \lyricVerseTwo
       \new Lyrics \lyricsto soprano \lyricVerseThree
-      \new Lyrics \printItalic \lyricsto soprano \lyricVerseFour
+      \new Lyrics \with \printItalic \lyricsto soprano \lyricVerseFour
       \new Lyrics \lyricsto soprano \lyricVerseFive
-      \new Lyrics \printItalic \lyricsto soprano \lyricVerseSix
+      \new Lyrics \with \printItalic \lyricsto soprano \lyricVerseSix
       \new Lyrics \lyricsto soprano \lyricVerseSeven
     >>
 }
