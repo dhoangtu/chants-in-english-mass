@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[twoside]{article}
 \RequirePackage[a5paper,left=1.6cm,right=1.6cm,nohead,bottom=2.2cm]{geometry}
 \usepackage{pdfpages}
 \usepackage{ifthen,changepage}
@@ -24,7 +24,7 @@
   \foreach \x in {1,...,\value{pdfpages}} {
   	\checkoddpage
 	\ifthenelse{\boolean{oddpage}}
-		{\ifoot[]{} \ofoot[\pagemark]{\pagemark} \includepdf[pagecommand={\thispagestyle{scrplain}},pages=\thepage]{songs.pdf}}
-		{\ifoot[\pagemark]{\pagemark} \ofoot[]{} \includepdf[pagecommand={\thispagestyle{scrplain}},pages=\thepage]{songs.pdf}}
+		{\ifoot[]{} \ofoot[\pagemark]{\pagemark} \includepdf[pagecommand={\thispagestyle{scrplain}},pages=\thepage,scale=0.9,offset=0.2cm 0cm]{songs.pdf}}
+		{\ifoot[]{} \ofoot[\pagemark]{\pagemark} \includepdf[pagecommand={\thispagestyle{scrplain}},pages=\thepage,scale=0.9,offset=0.2cm 0cm]{songs.pdf}}
   }
 \end{document}
