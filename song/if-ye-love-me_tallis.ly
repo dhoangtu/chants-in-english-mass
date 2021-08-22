@@ -54,7 +54,7 @@ musicVerseSoprano = \relative c' {
   %{	04	%} bes2 a ( |
   %{	05	%} a4) a a a |
   %{	06	%} c2 bes4 a ( |
-  %{	07	%} a8) bes g4 a2 ( |
+  %{	07	%} a8 bes g4) a2 ( |
   %{	08	%}
   %{	09	%} a4) g f f |
   %{	10	%} bes2. a4 ( |
@@ -84,7 +84,7 @@ musicVerseSoprano = \relative c' {
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 verseOne = \lyricmode {
   If ye love me, keep my com -- mand -- ments,
-  and I will pray the Fa _ _ ther,
+  and I will pray the Fa -- ther,
   and He shall give you a -- no -- ther com -- fort -- er,
   that He may bide with you for -- ev -- er, ev'n the spirit of truth,
   

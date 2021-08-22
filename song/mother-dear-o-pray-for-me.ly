@@ -23,6 +23,9 @@ globalSettings = {
   \key bes \major
   \time 3/4
   \override Score.BarNumber.break-visibility = ##(#f #f #f)
+  \set Timing.beamExceptions = #'()
+  \set Timing.baseMoment = #(ly:make-moment 1/4)
+  \set Timing.beatStructure = #'(1 1 1)
 }
 
 verseSettings = {
@@ -42,6 +45,7 @@ verseSettings = {
 			       "Liberation Serif"
 			       (/ 20 20)))
   system-system-spacing = #'((basic-distance . 3) (padding . 3))
+  page-count = 1
 }
 
 printItalic = {
@@ -130,6 +134,9 @@ lyricChorus = \lyricmode {
       \new Lyrics \lyricsto soprano \lyricVerseOne
       \new Lyrics \with \printItalic \lyricsto soprano \lyricVerseTwo
     >>
+    \layout {
+      \override LyricHyphen.minimum-distance = #2
+    }
 }
 
 \score {
@@ -143,4 +150,7 @@ lyricChorus = \lyricmode {
       >>
       \new Lyrics \lyricsto soprano \lyricChorus
     >>
+    \layout {
+      \override LyricHyphen.minimum-distance = #2
+    }
 }

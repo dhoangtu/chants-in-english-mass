@@ -37,9 +37,9 @@ do
     #page counter
     echo "${title};${pagecounter}" >> ${CONTENT}
     # starting page of next song
-    pageno=`pdfinfo "${GEN}/${title}${DELIMITER}${composer}.pdf" | grep "Pages" | grep -Eo '[0-9]+'`
+    #pageno=`pdfinfo "${GEN}/${title}${DELIMITER}${composer}.pdf" | grep "Pages" | grep -Eo '[0-9]+'`
     echo "${title}${DELIMITER}${composer}.pdf : ${pageno} pages"
-    pagecounter=$(( $pageno + $pagecounter ))
+    #pagecounter=$(( $pageno + $pagecounter ))
     
     filelist+=( "${GEN}/${shortname}.pdf" )
     
@@ -54,7 +54,7 @@ pdflatex song-odd-even.tex
 
 # add covers
 pdftk cover-front.pdf cover-inner.pdf blank-a5.pdf preface-vn.pdf preface-en.pdf song-odd-even.pdf \
-  contents.pdf blank-a5.pdf ref-vn.pdf blank-a5.pdf ref-en.pdf cover-back.pdf cat output chants-in-english-mass.pdf
+  contents.pdf blank-a5.pdf cover-back.pdf cat output chants-in-english-mass.pdf
 
 # remove temporary files
 #rm -rf ${GEN} ${RESIZED} songs.pdf song-odd-even.pdf song-book.pdf book-adjusted.pdf

@@ -112,4 +112,7 @@ verseThree = \lyricmode {
       \new Lyrics \with \printItalic \lyricsto sopranos \verseTwo
       \new Lyrics \lyricsto sopranos \verseThree
     >>
+    \layout {
+      \override LyricHyphen.minimum-distance = #2
+    }
 }

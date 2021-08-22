@@ -22,6 +22,10 @@ global= {
   \time 3/4
   \override Score.BarNumber.break-visibility = ##(#f #f #f)
   \override Lyrics.LyricSpace.minimum-distance = #3.0
+  
+  \set Timing.beamExceptions = #'()
+  \set Timing.baseMoment = #(ly:make-moment 1/4)
+  \set Timing.beatStructure = #'(1 1 1)
 }
 
 \paper {

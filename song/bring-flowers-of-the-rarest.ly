@@ -24,6 +24,9 @@ globalSettings = {
   \key bes \major
   \time 3/4
   \override Score.BarNumber.break-visibility = ##(#f #f #f)
+  \set Timing.beamExceptions = #'()
+  \set Timing.baseMoment = #(ly:make-moment 1/4)
+  \set Timing.beatStructure = #'(1 1 1)
 }
 
 verseSettings = {
