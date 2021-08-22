@@ -126,7 +126,7 @@ lyricChorus = \lyricmode {
       \new Staff <<
         \clef "treble"
         \new Voice = "soprano" {
-          \voiceOne \globalSettings \verseSettings   \musicVerseSoprano
+          \globalSettings \verseSettings   \musicVerseSoprano
         }
       >>
       \new Lyrics \lyricsto soprano \lyricVerseOne

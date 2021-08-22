@@ -53,7 +53,7 @@ musicVerseSoprano = \relative c' {
   %{	03	%} fis1 e2 |
   %{	04	%} d1 d4 (e) |
   %{	05	%} fis1 g2 |
-  %{	06	%} a1 \tuplet 3/2 { g4 a b } |
+  %{	06	%} a1 \tuplet 3/2 { \stemUp g4 (a b) \stemNeutral } |
   %{	07	%} a1. |
   %{	08	%} a1 a2 |
   %{	09	%} d1 b2 |
@@ -72,7 +72,7 @@ musicVerseSoprano = \relative c' {
 verseOne = \lyricmode {
   \set stanza = #"1."
   The King of love my she -- pherd is,
-  whose good -- ness keeps  me _ _ ev -- er.
+  whose good -- ness keeps  me ev -- er.
   I want for noth -- ing!
   I am God's and God is mine for -- ev -- er.
 }
@@ -80,7 +80,7 @@ verseOne = \lyricmode {
 verseTwo = \lyricmode {
   \set stanza = #"2."
   Where streams of liv -- ing wat -- er flow
-  My hap -- py soul God _ _ leads now,
+  My hap -- py soul God leads now,
   And where the green -- est past -- ures grow
   with food cel -- est -- ial feeds now.
 }
@@ -88,7 +88,7 @@ verseTwo = \lyricmode {
 verseThree = \lyricmode {
   \set stanza = #"3."
   Though of -- ten fool -- ish -- ly I strayed,
-  still in true love God _ _ sought me;
+  still in true love God sought me;
   And told me to be un -- a -- fraid,
   and home a -- gain God brought me.
 }
@@ -96,7 +96,7 @@ verseThree = \lyricmode {
 verseFour = \lyricmode {
   \set stanza = #"4."
   In time of death I'll have no fear
-  With You, dear Lord, be _ _ side me;
+  With You, dear Lord, be side me;
   your rod and staff my com -- fort still,
   your cross be -- fore to guide me.
 }
@@ -104,7 +104,7 @@ verseFour = \lyricmode {
 verseFive = \lyricmode {
   \set stanza = #"5."
   You spread a ta -- ble in my sight;
-  The bread of life be _ _ stow -- ing;
+  The bread of life be stow -- ing;
   With prom -- ise of e -- ter -- nal light
   My cup is o -- ver -- flow -- ing!
 }
@@ -112,7 +112,7 @@ verseFive = \lyricmode {
 verseSix = \lyricmode {
   \set stanza = #"6."
   Through all of my re -- main -- ing days
-  Then guide me, leave me _ _ nev -- er,
+  Then guide me, leave me nev -- er,
   Good Shep -- herd, may I sing your praise
   With -- in your house for -- ev -- er.
 }
