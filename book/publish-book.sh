@@ -47,14 +47,14 @@ do
 done
 
 # combine songs
-pdftk "${filelist[@]}" cat output songs.pdf
+qpdf --empty --pages "${filelist[@]}" -- songs.pdf
 
 # add page numbers, adjust inner/outer margins of odd/even pages, scale pages
 pdflatex song-odd-even.tex
 
 # add covers
-pdftk cover-front.pdf cover-inner.pdf blank-a5.pdf preface-vn.pdf preface-en.pdf song-odd-even.pdf \
-  contents.pdf blank-a5.pdf cover-back.pdf cat output chants-in-english-mass.pdf
+qpdf --empty --pages cover-front.pdf cover-inner.pdf blank-a5.pdf preface-vn.pdf preface-en.pdf song-odd-even.pdf \
+  contents.pdf blank-a5.pdf cover-back.pdf -- chants-in-english-mass.pdf
 
 # remove temporary files
 #rm -rf ${GEN} ${RESIZED} songs.pdf song-odd-even.pdf song-book.pdf book-adjusted.pdf
